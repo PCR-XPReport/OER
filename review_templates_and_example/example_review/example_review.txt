@@ -1,0 +1,100 @@
+###### Code review documentation ######
+Task: Stack
+Date: 26.01.2024
+
+**Formal criteria**
+- Was the submission anonymized: Yes
+
+**Task definition**
+- Was the task fulfilled: Yes
+- How was the task solved: The given implementation realizes a stack by using a linked list. A recursive data structure LinkedlistNode is used, which represents a node in the linked list. This contains a value and a reference to the successor (also an instance of the LinkedlistNode class). This means that only the header of the list needs to be saved.
+The stack is based on the linked list, in which the top element (top) is such a LinkedlistNode. If an element is added (push), the new element becomes the top element and the previous top element becomes its successor. If the top element is removed (pop), the successor of the top element becomes the new top element and the value of the old top element is returned, unless the stack is empty, in which case null is returned. With the toString method, successors are repeatedly determined from the top element via the reference until the end of the stack is reached. The value for the current element is always saved in a string.
+When converting the evaluation of a postfix expression (Main.evaluatePostfix), the string input is parsed character by character and processed using a switch statement. 
+- Were edge cases considered: 
+    # Division by zero has been taken into account.
+    # There is no error handling if an unknown operator occurs.
+    # Main.evaluatePostfix does not check whether the stack is empty.
+
+**Compilability and testability:**
+- Does the submission compile: Yes
+- Do public test cases fail: Yes
+    #TC10: "Division by zero" should be the output when dividing by 0. Instead, 0 is returned as the exit code. 
+    #TC4 & TC5 & TC 6 & TC9: Operand order is not correct for the division. It should be secondOp/firstOp. 
+- Are there any uncaught/unprocessed exceptions: No
+
+**Comprehensibility and coding standards**
+- Is the code understandable and comprehensible? Are the comments sufficient to understand the code? Explain which portions are unclear or clear. 
+ ## Main.evaluatePostfix():
+        ## A comment at "if (x >= 48 && x <= 57)" would be helpful to understand that the ASCII value is taken here. Perhaps it would also be good to use constants so that it is easier to understand what the numbers stand for. 
+    ## MyStack.push():
+        # In the method MyStack.push the line "top = new LinkedlistNode(value, top);" is difficult to understand for beginners. It might have been better to write "LinkedlistNode new_top = new LinkedlistNode(value, top); top=new_top;"
+    # The rest is easy to understand. I think the switch statement is well chosen in the evaluatePostfix method. I'm not quite sure though, but I think the switch statement is also more efficient than an if (https://stackoverflow.com/questions/6705955/why-switch-is-faster-than-if)
+    # The pop and to String methods in the stack class are also self-explanatory. 
+- Could the code be simplified: No
+- Can the readability of the code be improved by using different method or
+variable names: Yes
+ ## Main.evaluatePostfix():
+        # The name of the counting variable of the For loop, 'x', in Main.evaluatePostfix is not meaningful. Typical counting variables would otherwise be "counter" or "i".
+        # The variable names firstOp and secondOp are not well chosen if you do not know the algorithm; because "Op" could stand for operator or operand.
+- Could some comments be removed by making the code itself more readable: No
+- Are there other non-conforming aspects: Yes
+    ##LinkedlistNode
+        # Class name LinkedlistNode is not in camelCase.
+        # The Java doc is missing in the LinkedlistNode class, both for the class and for the public methods and members. 
+        # The LinkedlistNode class fits better in the com.da.datastructures package than com.da.main, as it is a data structure.
+        # The member variables should be private. Otherwise you would not need the getter and setter methods.
+        # In the setValue() method, it would be better to use "this.value = value;" to make it explicit that the member is being changed.
+    ##MyStack
+        # The access modifiers of the attribute are missing in the MyStack class. Without an explicit specification, the member is visible in the package; however, private would be desirable here.
+        # The comment of the attribute top in MyStack is incorrect. 'N' is not used, as double values are taken as the value. 
+        # A consturctor is missing in the MyStack class, but should typically be included.
+        # The TODO comment is still present in the MyStack class in the toString method. This makes the code look unfinished.
+    ##Main
+        # There are 3 lines of space in Main. evaluatePostfix between the loop header and the 1st statement in the body. This does not comply with the coding standard.
+        # The switch statement in Main.evaluatePostfix has no default case; however, it is good practice to implement a default case.
+
+**Maintainability**
+- Are there hard-coded values that should actually be constants: No
+- Is there duplicated code or are there source code clones: No
+- Is there dead code (e.g., variables, methods, if-blocks,...): Yes
+    # LinkedlistNode.setValue und LinkedlistNode.setSuccessor
+- Is there commented out code: Yes
+    #LinkedlistNode.isEmpty
+- Are there redundant comments: No
+
+**Efficiency**
+- Is there a way to make the code more efficient: Yes
+  ##MyStack
+        # Using a StringBuilder to concatenate strings is more efficient than the '+' operator.
+        #return_str.toString() in the MyStack.toString() method is unnecessary because return_str is already a string.
+- Are there unnecessary checks: No
+
+****Conclusion****
+*Positive feedback
+- The MyStack class is clear and the methods (except for push) are written in a clear and self-explanatory way.
+- LinkeslistNode has a clear and simple structure, and I also like the solution using a recursive simple linked list. This is an elegant solution
+- The Main.evaluatePostfix is straight-forward and clear with a for loop and the switch statement. Division by zero has been handled. I didn't know Character.getNumericValue before, I used "Double.parseDouble". 
+
+*Critical points
+- Variable names in the Main.evalutePostfix method
+  - Suggestions for improvement: More descriptive names such as "character" or "firstOperand" so that you can immediately see what the variables stand for
+- Concatenation of strings with '+'
+  - Suggestions for improvement: Use StringBuilder, as this is more efficient
+- Remove dead code and commented out code
+  - Suggestions for improvement: Remove dead code and commented out code, otherwise it only makes the code more confusing.
+- Division by zero is not handled correctly 
+  - Suggestions for improvement: An exception instead of an exit and returning the correct message is more elegant. With a System.exit the program is stopped immediately.
+- Operand order for division
+  -Suggestions for improvement: secondOp/firstOp would be the correct order, otherwise the results are not correct.
+
+****Own experience****
+- What did you do differently in your implementation of the task and why? 
+    #I have implemented an array instead of a linked list. Therefore I use a variable top, which always points to the index of the top element. So that the stack can grow/shrink dynamically, each push checks whether the capacity of the array has already been reached; if so, a new array with double the size is created and all values from the old array are copied into the new one. The other indices contain zero. At each pop, the program checks whether the array is now only 1/4 full (using top, which points to the top element). If this is the case, the array size is halved by creating a new array with the size length/2 and copying all elements into this new array. I have also not implemented a MyStack.isEmpty method but only check if the index of top>=0. 
+    #In Main.evalutePostfix I parse the input character using an If statement and the ASCII value of the characters. I use an ArithmeticException when dividing by zero.
+
+----- Explanation of technical terms -----
+Edge cases are special or unusual cases in a system that are often on the edge or at the limits of normal functionality. Edge cases are scenarios that are not typical but still need to be considered to ensure that a system is robust and reliable, such as unusual user input or error cases.
+
+Source code clone refers to a situation in which two or more parts of the source code of a software are almost identical or very similar. 
+
+Dead code refers to lines of code that are never executed or whose results are of no further use. 

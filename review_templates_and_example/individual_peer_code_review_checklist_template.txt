@@ -1,0 +1,80 @@
+###### Code review documentation ######
+Task: 
+Date:
+
+**Formal criteria**
+- Was the submission anonymized: [Yes/No]
+
+**Task definition**
+- Was the task fulfilled: [Yes/No]
+- How was the task solved: [Description of the solution]
+- Were edge cases considered: [Discussion of edge cases]
+
+**Compilability and testability:**
+- Does the submission compile: [Yes/No - why not]
+- Do public test cases fail: [Yes - which ones and why /No]
+- Are there any uncaught/unprocessed exceptions: [Yes - which ones /No]
+
+**Comprehensibility and coding standards**
+- Is the code understandable and comprehensible? Are the comments sufficient to understand the code? Explain which portions are unclear or clear. [Discussion about where parts are particularly unclear or clear]
+- Could the code be simplified: [Yes - how /No]
+- Can the readability of the code be improved by using different method or
+variable names: [Yes - such as /no]
+- Could some comments be removed by making the code itself more readable: [Yes - such as /No]
+- Are there other non-conforming aspects: [Yes - which /No]
+
+**Maintainability**
+- Are there hard-coded values that should actually be constants: [Yes - which /No]
+- Is there duplicated code or are there source code clones: [Yes - where /No]
+- Is there dead code (e.g., variables, methods, if-blocks,...): [Yes - where /No]
+- Is there commented out code: [Yes - where /No]
+- Are there redundant comments: [Yes - where /No]
+
+**Efficiency**
+- Is there a way to make the code more efficient: [Yes - how /No]
+- Are there unnecessary checks: [Yes - which /No]
+
+****Conclusion****
+*Positive feedback
+- [Positive point 1]
+- [Positive point 2]
+
+*Critical points
+- [Problem 1]
+  - Suggestions for improvement: [Suggestion 1]
+- [Problem 2]
+  - Suggestions for improvement: [Suggestion 2]
+
+****Own experience****
+- What did you do differently in your implementation of the task and why?  [Short description of your own solution or the differences]
+
+###### AI code review ######
+Link to the AI used: 
+Date:
+
+[Copy the output of the AI here]
+
+###### AI code review rating ######
+
+*Matches between Individual Code Review and AI Code Review*
+(Which areas of the AI output match the results of your code review?
+Are there specific places where the AI and code review results match?)
+
+*Differences between Individual Code Review and AI Code Review*
+(What differences or discrepancies are there between the output of the AI and your code review results? Can these differences be explained?)
+
+*Quality and accuracy*
+(How accurate and reliable was the output of the AI in relation to the task?
+Were there any misjudgments or errors?)
+
+*Insights gained*
+- [Insight 1]
+- [Insight 2]
+
+
+----- Explanation of technical terms -----
+Edge cases are special or unusual cases in a system that are often on the edge or at the limits of normal functionality. Edge cases are scenarios that are not typical but still need to be considered to ensure that a system is robust and reliable, such as unusual user input or error cases.
+
+Source code clone refers to a situation in which two or more parts of the source code of a software are almost identical or very similar. 
+
+Dead code refers to lines of code that are never executed or whose results are of no further use. 

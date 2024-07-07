@@ -1,0 +1,52 @@
+Project: [Project name]
+Date: [Date of review meeting]
+Author: [Author's name]
+Moderator: [Name of moderator]
+Participants: [List of participants]
+
+
+###########################
+	Reviewer comments before the review meeting
+###########################
+(Reviewer comments are recorded here)
+
+1.[Reviewer Name]
+[Reviewer's comment]
+
+2.[Reviewer Name]
+[Reviewer's comment]
+
+....
+
+###########################
+	Author reaction before the review meeting
+###########################
+(Here the owner comments on the reviewers' comments)
+
+1.
+[Author's comment]
+Categorization:[[CLOSED], [TO BE IMPLEMENTED], [TO BE DISCUSSED]]
+
+2.
+[Author's comment]
+Categorization:[[CLOSED], [TO BE IMPLEMENTED], [TO BE DISCUSSED]]
+
+...
+
+###########################
+	Discussion	
+###########################
+(Discussions during the review will be recorded here)
+
+1.[Name of the participants of the discussion]
+[Discussion about comment 1]
+
+2.[Name of the participant of the discussion]
+[Discussion about comment 2]
+
+...
+
+###########################
+	Comments	
+###########################
+(Additional information or comments can be added here).

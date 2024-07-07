@@ -1,0 +1,22 @@
+LOGGING STARTS
+PASSED testdata/output/testcase1.out
+FAILED testdata/output/testcase10.out
+PASSED testdata/output/testcase10stack.out
+PASSED testdata/output/testcase1stack.out
+PASSED testdata/output/testcase2.out
+PASSED testdata/output/testcase2stack.out
+PASSED testdata/output/testcase3.out
+PASSED testdata/output/testcase3stack.out
+FAILED testdata/output/testcase4.out
+PASSED testdata/output/testcase4stack.out
+FAILED testdata/output/testcase5.out
+PASSED testdata/output/testcase5stack.out
+FAILED testdata/output/testcase6.out
+PASSED testdata/output/testcase6stack.out
+PASSED testdata/output/testcase7.out
+PASSED testdata/output/testcase7stack.out
+PASSED testdata/output/testcase8.out
+PASSED testdata/output/testcase8stack.out
+FAILED testdata/output/testcase9.out
+PASSED testdata/output/testcase9stack.out
+PASSED 15, FAILED 5

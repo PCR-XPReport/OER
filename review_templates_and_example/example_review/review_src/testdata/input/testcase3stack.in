@@ -1,0 +1,10 @@
+stack
+push(-66)
+push(3)
+print
+push(189)
+pop
+pop
+print
+push(-222)
+print

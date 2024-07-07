@@ -1,0 +1,37 @@
+Date and time: [Date]
+
+
+######################## Review 1 ########################
+Author: [name of the author]
+Reviewer: [name of the reviewer]
+
+###########################
+  Implementation details
+###########################
+[Specific implementation details that were highlighted or discussed]
+
+
+###########################
+Bugs or improvements
+###########################
+[List of errors or issues identified during the review]
+
+
+
+
+
+
+######################## Review 2 ########################
+Author: [Author's name]
+Reviewer: [name of the reviewer]
+
+###########################
+  Implementation details
+###########################
+[Specific implementation details that were highlighted or discussed]
+
+
+###########################
+Bugs or improvements
+###########################
+[List of errors or issues identified during the review]
